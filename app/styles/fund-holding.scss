@@ -1,0 +1,49 @@
+h3.hello-formed {
+    color: blue;
+}
+
+.class-make {
+    background-color: green;
+}
+
+.ag-header-cell-filtered {
+    background-color: #ee5;
+}
+
+.ag-row-group .my-class .ag-group-checkbox .ag-row-group .ag-group-child-count {
+    display: none;
+}
+
+.ag-row-group .red {
+    background-color: red;
+    border-radius: 50%;
+}
+
+.ag-row-group .yellow {
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+.ag-row-group .green {
+    background-color: green;
+    border-radius: 50%;
+}
+
+svg {
+    display: inline-block;
+    vertical-align: middle;
+      transform-origin: 50% 50%;
+      animation: scale .6s;
+    margin: 10px;
+      
+    text {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 12px;
+    }
+} 
+  
+@keyframes scale {
+    from { transform: scale(.5); }
+    to { transform: scale(1); }
+}

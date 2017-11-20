@@ -1,0 +1,485 @@
+﻿[
+   {
+      "Name":"Apple Inc.",
+      "Identifier":"AAPL",
+      "Weight":3.77665,
+      "Sector":"Information Technology",
+      "Shares Held":58923800
+   },
+   {
+      "Name":"Microsoft Corporation",
+      "Identifier":"MSFT",
+      "Weight":2.723367,
+      "Sector":"Information Technology",
+      "Shares Held":87877610
+   },
+   {
+      "Name":"Facebook Inc. Class A",
+      "Identifier":"FB",
+      "Weight":1.902465,
+      "Sector":"Information Technology",
+      "Shares Held":27046464
+   },
+   {
+      "Name":"Alphabet Inc. Class A",
+      "Identifier":"GOOGL",
+      "Weight":1.371634,
+      "Sector":"Information Technology",
+      "Shares Held":3396760
+   },
+   {
+      "Name":"Alphabet Inc. Class C",
+      "Identifier":"GOOG",
+      "Weight":1.365215,
+      "Sector":"Information Technology",
+      "Shares Held":3444993
+   },
+   {
+      "Name":"Visa Inc. Class A",
+      "Identifier":"V",
+      "Weight":0.896397,
+      "Sector":"Information Technology",
+      "Shares Held":20869312
+   },
+   {
+      "Name":"Intel Corporation",
+      "Identifier":"INTC",
+      "Weight":0.854122,
+      "Sector":"Information Technology",
+      "Shares Held":53743216
+   },
+   {
+      "Name":"Cisco Systems Inc.",
+      "Identifier":"CSCO",
+      "Weight":0.766383,
+      "Sector":"Information Technology",
+      "Shares Held":57106340
+   },
+   {
+      "Name":"Oracle Corporation",
+      "Identifier":"ORCL",
+      "Weight":0.67702,
+      "Sector":"Information Technology",
+      "Shares Held":34458964
+   },
+   {
+      "Name":"Mastercard Incorporated Class A",
+      "Identifier":"MA",
+      "Weight":0.620926,
+      "Sector":"Information Technology",
+      "Shares Held":10653023
+   },
+   {
+      "Name":"International Business Machines Corporation",
+      "Identifier":"IBM",
+      "Weight":0.578944,
+      "Sector":"Information Technology",
+      "Shares Held":9891415
+   },
+   {
+      "Name":"NVIDIA Corporation",
+      "Identifier":"NVDA",
+      "Weight":0.540817,
+      "Sector":"Information Technology",
+      "Shares Held":6847178
+   },
+   {
+      "Name":"Broadcom Limited",
+      "Identifier":"AVGO",
+      "Weight":0.449685,
+      "Sector":"Information Technology",
+      "Shares Held":4640447
+   },
+   {
+      "Name":"Texas Instruments Incorporated",
+      "Identifier":"TXN",
+      "Weight":0.425275,
+      "Sector":"Information Technology",
+      "Shares Held":11294690
+   },
+   {
+      "Name":"Accenture Plc Class A",
+      "Identifier":"ACN",
+      "Weight":0.390464,
+      "Sector":"Information Technology",
+      "Shares Held":7050802
+   },
+   {
+      "Name":"QUALCOMM Incorporated",
+      "Identifier":"QCOM",
+      "Weight":0.352595,
+      "Sector":"Information Technology",
+      "Shares Held":16843772
+   },
+   {
+      "Name":"PayPal Holdings Inc",
+      "Identifier":"PYPL",
+      "Weight":0.343494,
+      "Sector":"Information Technology",
+      "Shares Held":12899297
+   },
+   {
+      "Name":"Adobe Systems Incorporated",
+      "Identifier":"ADBE",
+      "Weight":0.338942,
+      "Sector":"Information Technology",
+      "Shares Held":5643045
+   },
+   {
+      "Name":"salesforce.com inc.",
+      "Identifier":"CRM",
+      "Weight":0.301069,
+      "Sector":"Information Technology",
+      "Shares Held":7793400
+   },
+   {
+      "Name":"Applied Materials Inc.",
+      "Identifier":"AMAT",
+      "Weight":0.267913,
+      "Sector":"Information Technology",
+      "Shares Held":12167014
+   },
+   {
+      "Name":"Automatic Data Processing Inc.",
+      "Identifier":"ADP",
+      "Weight":0.232313,
+      "Sector":"Information Technology",
+      "Shares Held":5114640
+   },
+   {
+      "Name":"Activision Blizzard Inc.",
+      "Identifier":"ATVI",
+      "Weight":0.212482,
+      "Sector":"Information Technology",
+      "Shares Held":8627741
+   },
+   {
+      "Name":"Micron Technology Inc.",
+      "Identifier":"MU",
+      "Weight":0.205337,
+      "Sector":"Information Technology",
+      "Shares Held":12728333
+   },
+   {
+      "Name":"Cognizant Technology Solutions Corporation Class A",
+      "Identifier":"CTSH",
+      "Weight":0.198657,
+      "Sector":"Information Technology",
+      "Shares Held":6723985
+   },
+   {
+      "Name":"eBay Inc.",
+      "Identifier":"EBAY",
+      "Weight":0.170023,
+      "Sector":"Information Technology",
+      "Shares Held":11354580
+   },
+   {
+      "Name":"HP Inc.",
+      "Identifier":"HPQ",
+      "Weight":0.164007,
+      "Sector":"Information Technology",
+      "Shares Held":19054316
+   },
+   {
+      "Name":"Electronic Arts Inc.",
+      "Identifier":"EA",
+      "Weight":0.162899,
+      "Sector":"Information Technology",
+      "Shares Held":3516515
+   },
+   {
+      "Name":"Intuit Inc.",
+      "Identifier":"INTU",
+      "Weight":0.161075,
+      "Sector":"Information Technology",
+      "Shares Held":2771673
+   },
+   {
+      "Name":"Analog Devices Inc.",
+      "Identifier":"ADI",
+      "Weight":0.148796,
+      "Sector":"Information Technology",
+      "Shares Held":4188633
+   },
+   {
+      "Name":"Lam Research Corporation",
+      "Identifier":"LRCX",
+      "Weight":0.143856,
+      "Sector":"Information Technology",
+      "Shares Held":1851294
+   },
+   {
+      "Name":"Fidelity National Information Services Inc.",
+      "Identifier":"FIS",
+      "Weight":0.141368,
+      "Sector":"Information Technology",
+      "Shares Held":3750157
+   },
+   {
+      "Name":"TE Connectivity Ltd.",
+      "Identifier":"TEL",
+      "Weight":0.141272,
+      "Sector":"Information Technology",
+      "Shares Held":4031674
+   },
+   {
+      "Name":"Corning Inc",
+      "Identifier":"GLW",
+      "Weight":0.122077,
+      "Sector":"Information Technology",
+      "Shares Held":10301380
+   },
+   {
+      "Name":"Amphenol Corporation Class A",
+      "Identifier":"APH",
+      "Weight":0.121455,
+      "Sector":"Information Technology",
+      "Shares Held":3507308
+   },
+   {
+      "Name":"Fiserv Inc.",
+      "Identifier":"FISV",
+      "Weight":0.121415,
+      "Sector":"Information Technology",
+      "Shares Held":2400574
+   },
+   {
+      "Name":"DXC Technology Co.",
+      "Identifier":"DXC",
+      "Weight":0.119088,
+      "Sector":"Information Technology",
+      "Shares Held":3236973
+   },
+   {
+      "Name":"Autodesk Inc.",
+      "Identifier":"ADSK",
+      "Weight":0.118875,
+      "Sector":"Information Technology",
+      "Shares Held":2506939
+   },
+   {
+      "Name":"Western Digital Corporation",
+      "Identifier":"WDC",
+      "Weight":0.113918,
+      "Sector":"Information Technology",
+      "Shares Held":3324949
+   },
+   {
+      "Name":"Hewlett Packard Enterprise Co.",
+      "Identifier":"HPE",
+      "Weight":0.1105,
+      "Sector":"Information Technology",
+      "Shares Held":18936022
+   },
+   {
+      "Name":"Red Hat Inc.",
+      "Identifier":"RHT",
+      "Weight":0.099316,
+      "Sector":"Information Technology",
+      "Shares Held":2052973
+   },
+   {
+      "Name":"Microchip Technology Incorporated",
+      "Identifier":"MCHP",
+      "Weight":0.095918,
+      "Sector":"Information Technology",
+      "Shares Held":2618832
+   },
+   {
+      "Name":"Paychex Inc.",
+      "Identifier":"PAYX",
+      "Weight":0.091957,
+      "Sector":"Information Technology",
+      "Shares Held":3660253
+   },
+   {
+      "Name":"Symantec Corporation",
+      "Identifier":"SYMC",
+      "Weight":0.090645,
+      "Sector":"Information Technology",
+      "Shares Held":7089848
+   },
+   {
+      "Name":"Skyworks Solutions Inc.",
+      "Identifier":"SWKS",
+      "Weight":0.090402,
+      "Sector":"Information Technology",
+      "Shares Held":2108410
+   },
+   {
+      "Name":"Xilinx Inc.",
+      "Identifier":"XLNX",
+      "Weight":0.082841,
+      "Sector":"Information Technology",
+      "Shares Held":2865919
+   },
+   {
+      "Name":"KLA-Tencor Corporation",
+      "Identifier":"KLAC",
+      "Weight":0.077102,
+      "Sector":"Information Technology",
+      "Shares Held":1787222
+   },
+   {
+      "Name":"Harris Corporation",
+      "Identifier":"HRS",
+      "Weight":0.074256,
+      "Sector":"Information Technology",
+      "Shares Held":1366104
+   },
+   {
+      "Name":"Global Payments Inc.",
+      "Identifier":"GPN",
+      "Weight":0.067645,
+      "Sector":"Information Technology",
+      "Shares Held":1733826
+   },
+   {
+      "Name":"Motorola Solutions Inc.",
+      "Identifier":"MSI",
+      "Weight":0.065748,
+      "Sector":"Information Technology",
+      "Shares Held":1852076
+   },
+   {
+      "Name":"Synopsys Inc.",
+      "Identifier":"SNPS",
+      "Weight":0.05712,
+      "Sector":"Information Technology",
+      "Shares Held":1708183
+   },
+   {
+      "Name":"Cadence Design Systems Inc.",
+      "Identifier":"CDNS",
+      "Weight":0.054465,
+      "Sector":"Information Technology",
+      "Shares Held":3261458
+   },
+   {
+      "Name":"NetApp Inc.",
+      "Identifier":"NTAP",
+      "Weight":0.054378,
+      "Sector":"Information Technology",
+      "Shares Held":3088597
+   },
+   {
+      "Name":"Citrix Systems Inc.",
+      "Identifier":"CTXS",
+      "Weight":0.053731,
+      "Sector":"Information Technology",
+      "Shares Held":1640753
+   },
+   {
+      "Name":"Advanced Micro Devices Inc.",
+      "Identifier":"AMD",
+      "Weight":0.05197,
+      "Sector":"Information Technology",
+      "Shares Held":9189010
+   },
+   {
+      "Name":"Total System Services Inc.",
+      "Identifier":"TSS",
+      "Weight":0.05126,
+      "Sector":"Information Technology",
+      "Shares Held":1904147
+   },
+   {
+      "Name":"Gartner Inc.",
+      "Identifier":"IT",
+      "Weight":0.051113,
+      "Sector":"Information Technology",
+      "Shares Held":1047400
+   },
+   {
+      "Name":"ANSYS Inc.",
+      "Identifier":"ANSS",
+      "Weight":0.050242,
+      "Sector":"Information Technology",
+      "Shares Held":969934
+   },
+   {
+      "Name":"Alliance Data Systems Corporation",
+      "Identifier":"ADS",
+      "Weight":0.049783,
+      "Sector":"Information Technology",
+      "Shares Held":549219
+   },
+   {
+      "Name":"CA Inc.",
+      "Identifier":"CA",
+      "Weight":0.047972,
+      "Sector":"Information Technology",
+      "Shares Held":3575672
+   },
+   {
+      "Name":"Seagate Technology PLC",
+      "Identifier":"STX",
+      "Weight":0.04513,
+      "Sector":"Information Technology",
+      "Shares Held":3327142
+   },
+   {
+      "Name":"Juniper Networks Inc.",
+      "Identifier":"JNPR",
+      "Weight":0.044995,
+      "Sector":"Information Technology",
+      "Shares Held":4314542
+   },
+   {
+      "Name":"VeriSign Inc.",
+      "Identifier":"VRSN",
+      "Weight":0.043969,
+      "Sector":"Information Technology",
+      "Shares Held":1014130
+   },
+   {
+      "Name":"Qorvo Inc.",
+      "Identifier":"QRVO",
+      "Weight":0.04169,
+      "Sector":"Information Technology",
+      "Shares Held":1444265
+   },
+   {
+      "Name":"Western Union Company",
+      "Identifier":"WU",
+      "Weight":0.041644,
+      "Sector":"Information Technology",
+      "Shares Held":5292572
+   },
+   {
+      "Name":"Akamai Technologies Inc.",
+      "Identifier":"AKAM",
+      "Weight":0.039928,
+      "Sector":"Information Technology",
+      "Shares Held":1976402
+   },
+   {
+      "Name":"F5 Networks Inc.",
+      "Identifier":"FFIV",
+      "Weight":0.034277,
+      "Sector":"Information Technology",
+      "Shares Held":738036
+   },
+   {
+      "Name":"Xerox Corporation",
+      "Identifier":"XRX",
+      "Weight":0.031663,
+      "Sector":"Information Technology",
+      "Shares Held":2420545
+   },
+   {
+      "Name":"FLIR Systems Inc.",
+      "Identifier":"FLIR",
+      "Weight":0.026202,
+      "Sector":"Information Technology",
+      "Shares Held":1543561
+   },
+   {
+      "Name":"CSRA Inc.",
+      "Identifier":"CSRA",
+      "Weight":0.023226,
+      "Sector":"Information Technology",
+      "Shares Held":1869145
+   }
+]
