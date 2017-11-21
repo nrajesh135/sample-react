@@ -18,7 +18,8 @@ const FundChart = React.createClass({
             expandedSector: null,
             chartData: this.createChartData(this.props.fundHoldingData),
             columnValues: {},
-            headerName: this.props.headerName
+            headerName: this.props.headerName,
+            columnCount: 0
         };
     },
 
@@ -85,15 +86,15 @@ const FundChart = React.createClass({
         console.log("Colors: ", colors);
         const chartDataArray = [];
         if(headerValArray && headerName) {
+            let columnData = {};
             headerValArray.forEach(function(data) {
                 if (data[headerName]) {
-                    const columnData = data[headerName];
+                    columnData = data[headerName];
                     const columnCount = {};
                     const colorCount = colors.length;
                     const min = 0;
                     columnData.forEach(function(element) {
                         columnCount[element] = (columnCount[element] || 0) + 1;
-                        // counts[color] = colors[Math.floor(Math.random() * (colorCount -  + 1) + min)];
                     });
                     console.log("Counts data: ", columnCount);
                     Object.keys(columnCount).forEach(function(key) {
@@ -106,25 +107,40 @@ const FundChart = React.createClass({
                     console.log("Chart data object: ", chartDataArray);
                 }
             });
+            this.setState({
+                columnCount: columnData.length
+            });
         }
         return chartDataArray;
     },
 
+    displayPercentage: function(count) {
+        const radix = 10;
+        const totalCount = this.state.columnCount;
+        const a = parseInt(count, radix);
+        const b = parseInt(totalCount, radix);
+        return parseInt(((a / b) * 100), radix);
+    },
+
     render: function() {
         const data = this.state.chartData ? this.state.chartData : [];
+        const columnCount = data.length;
         console.log("Chart data: ", data);
         return (
             <div>
                 <div>
-                    <PieChart className="Pie Chart" data={data} onSectorHover={this.handleMouseEnterOnSector}
-                        sectorStrokeWidth={0} expandOnHover shrinkOnTouchEnd />
+                    <div>
+                        <PieChart className="Pie Chart" data={data} onSectorHover={this.handleMouseEnterOnSector}
+                            sectorStrokeWidth={0} expandOnHover shrinkOnTouchEnd />
+                    </div>
                     <div>
                     {
                         data.map((element, i) => (
                             <div key={i}>
                                 <span style={{background: element.color}}></span>
-                                <span style={{fontWeight: this.state.expandedSector === i ? "bold" : null}}>
-                                    {element.label} : {element.value}
+                                <span style={{fontWeight: this.state.expandedSector === i ? "bold" : null,
+                                    color: this.state.expandedSector === i ? element.color : null}}>
+                                    {element.label} : {this.displayPercentage(element.value, columnCount)}%
                                 </span>
                             </div>
                         ))
