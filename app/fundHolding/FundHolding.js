@@ -1,23 +1,26 @@
 import React from "react";
 import fundHoldingJson from "../menuData/fundHolding.json";
 import FundMenu from "./FundMenu.js";
-import PieChart from "../pieChart/PieChart";
+import FundChart from "./FundChart";
 
 const FundHolding = React.createClass({
     getInitialState: function() {
         return {
             fundHoldingData: fundHoldingJson,
             CSS_COLOR_NAMES: this.getHTMLColorNames,
-            expandedSector: null
+            expandedSector: null,
+            headerName: null
         };
     },
 
     componentDidMount: function() {
-        this.handleMouseEnterOnSector = this.handleMouseEnterOnSector.bind(this);
     },
 
-    handleMouseEnterOnSector: function(sector) {
-        this.setState({expandedSector: sector});
+    setHeaderName: function(name) {
+        console.log("Clicked column name: ", name);
+        this.setState({
+            headerName: name
+        });
     },
 
     getHTMLColorNames: function() {
@@ -37,29 +40,13 @@ const FundHolding = React.createClass({
     },
 
     render: function() {
-        const data = [
-            {label: "Facebook", value: 100, color: "#3b5998"},
-            {label: "Twitter", value: 60, color: "#00aced"},
-            {label: "Google Plus", value: 30, color: "#dd4b39"},
-            {label: "Pinterest", value: 20, color: "#cb2027"},
-            {label: "Linked In", value: 10, color: "#007bb6"},
-        ];
         return (
             <div>
-               <FundMenu fundHoldingData={this.state.fundHoldingData} />
-               <PieChart className="Pie Chart" data={data} onSectorHover={this.handleMouseEnterOnSector}
-                    sectorStrokeWidth={2} expandOnHover shrinkOnTouchEnd />
                 <div>
-                {
-                    data.map((element, i) => (
-                        <div key={i}>
-                            <span style={{background: element.color}}></span>
-                            <span style={{fontWeight: this.state.expandedSector === i ? "bold" : null}}>
-                                {element.label} : {element.value}
-                            </span>
-                        </div>
-                    ))
-                }
+                    <FundMenu fundHoldingData={this.state.fundHoldingData} setHeaderName={this.setHeaderName} />
+                </div>
+                <div>
+                    <FundChart fundHoldingData={this.state.fundHoldingData} CSS_COLOR_NAMES={this.getHTMLColorNames()} headerName={this.state.headerName} />
                 </div>
             </div>
         );

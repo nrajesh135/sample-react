@@ -10,6 +10,7 @@ import "../styles/fund-holding.scss";
 const FundMenu = React.createClass({
     propTypes: function() {
         fundHoldingData: React.PropTypes.array;
+        setHeaderName: React.PropTypes.func;
     },
 
     getInitialState: function() {
@@ -17,6 +18,10 @@ const FundMenu = React.createClass({
             fundHoldingData: this.props.fundHoldingData,
             gridOptions: {}
         };
+    },
+
+    componentDidMount: function() {
+        this.createGridOptions(this.props.fundHoldingData);
     },
 
     componentWillReceiveProps: function(nextProps) {
@@ -35,6 +40,10 @@ const FundMenu = React.createClass({
             columnDefs: this.getColumnDefinations(fundHoldingData),
             rowData: fundHoldingData,
             sortingOrder: ["asc", "desc", null],
+            sortCallback: (name, type) => {
+                console.log("Sort name: ", name);
+                console.log("sort type: ", type);
+            },
             onGridReady: this.onGridReady.bind(this)
         };
         console.log("Creating grid: ", gridOptions);
@@ -46,6 +55,15 @@ const FundMenu = React.createClass({
         this.state.gridOptions.columnApi = params.columnApi;
         this.state.gridOptions.api.selectAll();
         this.setState(this.state);
+    },
+
+    onCellClicked: function(params) {
+        const colDefs = params.colDef;
+        const headerName = colDefs.headerName;
+        console.log("Header Name: ", JSON.stringify(headerName));
+        if (this.props.setHeaderName) {
+            this.props.setHeaderName(headerName);
+        }
     },
 
     getColumnDefinations: function(fundHolding) {
@@ -89,8 +107,8 @@ const FundMenu = React.createClass({
                 <div style={{height: 525, width: 1020}} className="ag-fresh" id="myGrid">
                     <AgGridReact columnDefs={this.getColumnDefinations(this.props.fundHoldingData)}
                     rowData={this.props.fundHoldingData} gridOptions={this.state.gridOptions}
-                    enableSorting={true} animateRows={true} sortingOrder={this.state.sortingOrder}
-                    enableColResize={true}/>
+                    enableSorting={true} animateRows={true} sortingOrder={this.state.sortingOrder} enableColResize={true}
+                    onGridReady={this.onGridReady.bind(this)} onCellClicked={this.onCellClicked.bind(this)} />
                 </div>
             </div>
         );

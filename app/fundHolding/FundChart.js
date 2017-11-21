@@ -8,51 +8,130 @@ const FundChart = React.createClass({
     propTypes: function() {
         fundHoldingData: React.PropTypes.array;
         CSS_COLOR_NAMES: React.PropTypes.array;
+        headerName: React.PropTypes.string;
     },
 
     getInitialState: function() {
         return {
             fundHoldingData: this.props.fundHoldingData,
             gridOptions: {},
-            expandedSector: null
+            expandedSector: null,
+            chartData: this.createChartData(this.props.fundHoldingData),
+            columnValues: {},
+            headerName: this.props.headerName
         };
     },
 
+    componentDidMount: function() {
+        this.handleMouseEnterOnSector = this.handleMouseEnterOnSector.bind(this);
+    },
+
     componentWillReceiveProps: function(nextProps) {
-        if(nextProps.fundHoldingData) {
+        const fundHoldingData = nextProps.fundHoldingData;
+        if(fundHoldingData) {
             this.setState({
-                fundHoldingData: nextProps.fundHoldingData,
-                gridOptions: this.createGridOptions(nextProps.fundHoldingData)
+                fundHoldingData: fundHoldingData,
+                chartData: this.createChartData(fundHoldingData, nextProps.headerName, nextProps.CSS_COLOR_NAMES)
             });
         }
     },
 
     handleMouseEnterOnSector: function(sector) {
+        console.log("Sector: ", sector);
         this.setState({expandedSector: sector});
     },
 
+    getColumnDefinations: function(fundHolding) {
+        const columnValues = [];
+        let count = 0;
+        if (fundHolding) {
+            const columnArray = [];
+            fundHolding.forEach(element => {
+                Object.keys(element).forEach(function eachKey(key) {
+                    if (count === 0) {
+                        columnArray.push(key);
+                    } else {
+                        if (columnArray.indexOf(key) === -1) {
+                            columnArray.push(key);
+                        }
+                    }
+                    count++;
+                });
+            });
+            console.log("Column Names Chart: ", JSON.stringify(columnArray));
+            columnArray.forEach(function(name) {
+                const columns = [];
+                fundHolding.forEach(function(data) {
+                    columns.push(data[name]);
+                });
+                columnValues.push({[name]: columns});
+            });
+        }
+        console.log("Column values: ", columnValues);
+        return columnValues;
+    },
+
+    getRandomInt: function(max, min) {
+        console.log("I am here: ", max);
+        const colorCodeIndex = Math.floor(Math.random() * (max - min + 1) + min);
+        console.log("Color code index: ", colorCodeIndex);
+        return colorCodeIndex;
+    },
+
+    createChartData: function(fundHoldingData, headerName, colors) {
+        const headerValArray = this.getColumnDefinations(fundHoldingData);
+        console.log("Header column values: ", JSON.stringify(headerValArray));
+        console.log("HeaderName ", headerName);
+        console.log("Colors: ", colors);
+        const chartDataArray = [];
+        if(headerValArray && headerName) {
+            headerValArray.forEach(function(data) {
+                if (data[headerName]) {
+                    const columnData = data[headerName];
+                    const columnCount = {};
+                    const colorCount = colors.length;
+                    const min = 0;
+                    columnData.forEach(function(element) {
+                        columnCount[element] = (columnCount[element] || 0) + 1;
+                        // counts[color] = colors[Math.floor(Math.random() * (colorCount -  + 1) + min)];
+                    });
+                    console.log("Counts data: ", columnCount);
+                    Object.keys(columnCount).forEach(function(key) {
+                        const chartDataObj = {};
+                        chartDataObj.label = key;
+                        chartDataObj.value = columnCount[key];
+                        chartDataObj.color = colors[Math.floor(Math.random() * (colorCount -  + 1) + min)];
+                        chartDataArray.push(chartDataObj);
+                    });
+                    console.log("Chart data object: ", chartDataArray);
+                }
+            });
+        }
+        return chartDataArray;
+    },
+
     render: function() {
-        const data = [
-            {label: "Facebook", value: 100, color: "#3b5998"},
-            {label: "Twitter", value: 60, color: "#00aced"},
-            {label: "Google Plus", value: 30, color: "#dd4b39"},
-            {label: "Pinterest", value: 20, color: "#cb2027"},
-            {label: "Linked In", value: 10, color: "#007bb6"},
-        ];
-        const {expandedSector} = this.state;
-        this.handleMouseEnterOnSector = this.handleMouseEnterOnSector.bind(this);
+        const data = this.state.chartData ? this.state.chartData : [];
+        console.log("Chart data: ", data);
         return (
             <div>
-                <PieChart
-                    data={ data }
-                    expandedSector={expandedSector}
-                    onSectorHover={this.handleMouseEnterOnSector}
-                    sectorStrokeWidth={2}
-                    expandOnHover
-                    shrinkOnTouchEnd
-                    expandPx = {5}
-                />
-        </div>
+                <div>
+                    <PieChart className="Pie Chart" data={data} onSectorHover={this.handleMouseEnterOnSector}
+                        sectorStrokeWidth={0} expandOnHover shrinkOnTouchEnd />
+                    <div>
+                    {
+                        data.map((element, i) => (
+                            <div key={i}>
+                                <span style={{background: element.color}}></span>
+                                <span style={{fontWeight: this.state.expandedSector === i ? "bold" : null}}>
+                                    {element.label} : {element.value}
+                                </span>
+                            </div>
+                        ))
+                    }
+                    </div>
+                </div>
+            </div>
         );
     }
 });
